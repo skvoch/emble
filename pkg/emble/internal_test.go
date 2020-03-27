@@ -2,6 +2,6 @@ package emble_test
 
 import "testing"
 
-func TestBasicCase(t *testing.T) {
+func Test_BasicCase(t *testing.T) {
 
 }
