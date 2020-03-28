@@ -1,19 +1,10 @@
 package emble
 
-import "time"
+import (
+	"time"
+	types "github.com/skvoch/emble/internal/types"
+)
 
-type someStruct struct {
-	UUID string
-	Name string
-	CreationTime time.Time
-	Money uint
-}
-
-func newSomeStruct() *someStruct{
-	return &someStruct{ 
-		UUID: "uuid",
-		Name: "Alex",
-		CreationTime: time.Now(),
-		Money: 0,
-	}
+func MakeCommonStructures() (types.) {
+	
 }
