@@ -1,10 +1,10 @@
 package emble
 
 import (
-	"time"
 	types "github.com/skvoch/emble/internal/types"
 )
 
-func MakeCommonStructures() (types.) {
-	
+// MakeCommonStructures - helper function for testing
+func MakeCommonStructures() (*types.CommonStructure, *types.CommonStructure) {
+
 }
