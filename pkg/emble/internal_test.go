@@ -20,7 +20,9 @@ func Test_BasicCase(t *testing.T) {
 	}
 
 	for _, c := range cases {
-
+		t.Run(c.Name, func(t *testing.T) {
+			emble.EqualWithoutTime(t, c.Structures.Expect, c.Structures.Actual)
+		})
 	}
 
 }
