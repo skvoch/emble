@@ -23,9 +23,16 @@ func equal(t *testing.T, expect, actual interface{}) {
 
 	for i := 0; i < valuesOfExpect.NumField(); i++ {
 
+		expectValue := valuesOfActual.Field(i).Interface()
+		actualValue := valuesOfExpect.Field(i).Interface()
+
+		if valuesOfActual.Field(i).Kind() == reflect.Struct {
+			equal(t, expectValue, actualValue)
+
+			continue
+		}
+
 		if valuesOfActual.Field(i).Type() != timeType {
-			expectValue := valuesOfActual.Field(i).Interface()
-			actualValue := valuesOfExpect.Field(i).Interface()
 
 			if expectValue != actualValue {
 
