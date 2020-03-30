@@ -30,7 +30,7 @@ func MakeCommonStructures() types.InterfacePair {
 	ValueString := randomString()
 
 	expect := &types.CommonStructure{
-		ValueInt:    ValueInt,
+		ValueInt:    0,
 		ValueFloat:  ValueFloat,
 		ValueString: ValueString,
 		ValueTime:   time.Now(),

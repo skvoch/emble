@@ -24,8 +24,15 @@ func equal(t *testing.T, expect, actual interface{}) {
 	for i := 0; i < valuesOfExpect.NumField(); i++ {
 
 		if valuesOfActual.Field(i).Type() != timeType {
-			if valuesOfActual.Field(i).Interface() != valuesOfExpect.Field(i).Interface() {
-				t.Fail()
+			expectValue := valuesOfActual.Field(i).Interface()
+			actualValue := valuesOfExpect.Field(i).Interface()
+
+			if expectValue != actualValue {
+
+				val := reflect.Indirect(reflect.ValueOf(expect))
+				varibleName := val.Type().Field(i).Name
+
+				t.Fatalf("Not euqal fields, Name: %s, Expect: %#v, Actual: %#v", varibleName, expectValue, actualValue)
 
 				return
 			}
