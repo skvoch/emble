@@ -17,6 +17,10 @@ func Test_BasicCase(t *testing.T) {
 			Name:       "Common structures",
 			Structures: emble.MakeCommonStructures(),
 		},
+		{
+			Name:       "Sub structures",
+			Structures: emble.MakeSubStructures(),
+		},
 	}
 
 	for _, c := range cases {
