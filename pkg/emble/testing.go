@@ -48,3 +48,43 @@ func MakeCommonStructures() types.InterfacePair {
 		Actual: actual,
 	}
 }
+
+// MakeSubStructures - make two stuctures with substructures
+func MakeSubStructures() types.InterfacePair {
+	ValueInt := randomInt()
+	ValueFloat := randomFloat64()
+	ValueString := randomString()
+
+	expect := &types.SubStructure{
+		ValueInt:    ValueInt,
+		ValueFloat:  ValueFloat,
+		ValueString: ValueString,
+		ValueTime:   time.Now(),
+
+		ValueStructure: types.CommonStructure{
+			ValueInt:    ValueInt,
+			ValueFloat:  ValueFloat,
+			ValueString: ValueString,
+			ValueTime:   time.Now(),
+		},
+	}
+
+	actual := &types.SubStructure{
+		ValueInt:    ValueInt,
+		ValueFloat:  ValueFloat,
+		ValueString: ValueString,
+		ValueTime:   time.Now(),
+
+		ValueStructure: types.CommonStructure{
+			ValueInt:    ValueInt,
+			ValueFloat:  ValueFloat,
+			ValueString: ValueString,
+			ValueTime:   time.Now(),
+		},
+	}
+
+	return types.InterfacePair{
+		Expect: expect,
+		Actual: actual,
+	}
+}
