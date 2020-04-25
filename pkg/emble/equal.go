@@ -1,10 +1,16 @@
 package emble
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 	"time"
 )
+
+// For test
+func PrintTestMessage() {
+	fmt.Println("Hello")
+}
 
 // EqualWithoutTime - two structures without time fields
 func EqualWithoutTime(t *testing.T, expect, actual interface{}) {
