@@ -9,7 +9,7 @@ import (
 
 // For test
 func PrintTestMessage() {
-	fmt.Println("Hello")
+	fmt.Println("Test from Goland")
 }
 
 // EqualWithoutTime - two structures without time fields
